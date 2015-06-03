@@ -7,12 +7,10 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <section>
-      <input type="text" id="text1" ng-model="name">
-      <input type="text" id="text2" ng-model="name">
-    </section>
+    <section ng-include="'example/views/example.client.view.html'"></section>
     <script type="text/javascript" src="/lib/angular/angular.js"></script>
     <script type="text/javascript" src="/example/example.client.module.js"></script>
+    <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
     <script type="text/javascript" src="/application.js"></script>
   </body>
 </html>
