@@ -1,0 +1,6 @@
+<ul ng-repeat="user in users">
+    <li>{{user.name}}, {{user.age}}</li>
+</ul>
+<input type="text" ng-model="user.name" placeholder="name">
+<input type="text" ng-model="user.age" placeholder="age">
+<button ng-click="add()">添加</button>
