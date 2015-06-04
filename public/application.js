@@ -2,7 +2,7 @@
  * Created by li on 15/6/3.
  */
 var mainApplicationModuleName = 'mean';
-var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngRoute', 'example', 'user']);
+var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngRoute', 'ngResource', 'example', 'user']);
 
 mainApplicationModule.config(['$locationProvider',
     function ($locationProvider) {
