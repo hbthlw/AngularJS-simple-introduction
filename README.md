@@ -9,13 +9,21 @@ AngularJS简易入门
 > AngularJS是Google开发的纯客户端JavaScript技术的WEB框架,用于扩展、增强HTML功能,它专为构建强大的WEB应用而设计。
 
 ## AngularJS的关键概念
+
 ### AngularJS核心模块
+
 包含一些对象和实体，用来完成AngularJS应用的基本操作
+
 ### angular全局对象
-```angular```全局对象包含一些可以用来创建和启动应用的方法。```angular```对象包含了一个精简版的```jQuery```，叫做```jqLite```。可以使得Angular做一些简单的DOM操作。
+
+  ```angular``` 全局对象包含一些可以用来创建和启动应用的方法。```angular``` 对象包含了一个精简版的```jQuery``` ，叫做```jqLite``` 。可以使得Angular做一些简单的DOM操作。
+
 ### AngularJS 模块
+
 在AngularJS中，一切都被封装在模块之中。AngularJS需要至少一个模块来进行操作。
+
 #### 应用模块
+
 AngularJS需要至少一个模块来启动，这个模块就是应用模块。
 使用```angular.module(name, [requires], [configFn])```来创建和获取模块。
 
@@ -24,22 +32,28 @@ AngularJS需要至少一个模块来启动，这个模块就是应用模块。
 * ```configFN```: 模块注册时调用的方法
 
 传入一个参数，获取对应模块。传入多个参数进行创建。（类似重载，跟是jQuery的setter,getter类似）
+
 #### 附加模块
+
 同样是AngularJS team开发的，但是不包含在核心功能里的模块。
+
 #### 第三方模块
+
 由其他人开发的模块
 
 ### 双向数据绑定
 双向数据绑定，使AngularJS应用总是保持model和view的一致。
 
-> 单向数据绑定与双向数据绑定```此处应展示图例```
+> 单向数据绑定与双向数据绑定
 
 ### 依赖注入
 
 示例：使用module的controller方法创建一个controller
 
 ```javascript
-angular.module('someModule').controller('SomeController',function($scope){	... 
+angular.module('someModule').controller('SomeController',
+function($scope){
+	... 
 });
 ```
 
@@ -58,8 +72,10 @@ function(a){
 通常采用“注释数组”的方式进行注入
 
 ```javascript
-angular.module('someModule').controller('SomeController', ['$scope',   function($scope) {
-   ...}]);
+angular.module('someModule').controller('SomeController', ['$scope',
+   function($scope) {
+   ...
+}]);
 ```
 ###AngularJS指令
 AngularJS就是一些标记，一般是属性或者元素名。从根本上讲，AngularJS是通过指令与DOM元素进行交互的。
@@ -92,7 +108,9 @@ AngularJS自带了一些必要的指令。
 angular. bootstrap(element, [modules], [config]) 
 ```
 
-* element: 想要启动的DOM元素* modules: 启动的模块* config: 启动的配置
+* element: 想要启动的DOM元素
+* modules: 启动的模块
+* config: 启动的配置
 
 方法在jqLite的document-ready事件中进行调用。
 
@@ -119,7 +137,9 @@ bower.json
 .bowerrc
 
 ```javascript
-{  "directory": "public/lib"}
+{
+  "directory": "public/lib"
+}
 ```
 ###使用Bower安装AngularJS
 ```javascript
@@ -133,7 +153,7 @@ bower.json
 ```
 
 ```shell
-$ bower install（上图）
+$ bower install
 ```
 
 ###配置AngluarJS
@@ -156,9 +176,9 @@ $ bower install（上图）
 
 ##AngularJS应用结构
 
-* 水平结构（上图）
-* 垂直结构（上图）
-* 垂直结构改良（上图）
+* 水平结构
+* 垂直结构
+* 垂直结构改良
 
 ##启动（引导）AngularJS应用
 我们采用手动启动的方式。
@@ -176,7 +196,10 @@ angular.element(document).ready(function() {
 在index.ejs中引入application.js
 
 ```html
-<section>       <input type="text" id="text1" ng-model="name">       <input type="text" id="text2" ng-model="name"></section>
+<section>
+       <input type="text" id="text1" ng-model="name">
+       <input type="text" id="text2" ng-model="name">
+</section>
 
 <script type="text/javascript" src="/application.js"></script>
 ```
@@ -208,7 +231,10 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, ['example'
 example.client.view.html --> public/example/views
 
 ```html
-<section>       <input type="text" id="text1" ng-model="name">       <input type="text" id="text2" ng-model="name"></section>
+<section>
+       <input type="text" id="text1" ng-model="name">
+       <input type="text" id="text2" ng-model="name">
+</section>
 ```
 
 index.ejs中
@@ -225,7 +251,11 @@ index.ejs中
 
 ```javascript
 example.client.controller.js --> public/example/controllers
-angular.module('example').controller('ExampleController', ['$scope',     function($scope) {       $scope.name = 'MEAN Application';     }￼]);
+angular.module('example').controller('ExampleController', ['$scope',
+     function($scope) {
+       $scope.name = 'MEAN Application';
+     }
+￼]);
 ```
 index.ejs引入
 ```html
@@ -278,7 +308,11 @@ AngluarJS的$locationProvider服务支持这种配置
 public/application.js
 
 ```javascript
-mainApplicationModule.config(['$locationProvider',     function($locationProvider) {       $locationProvider.hashPrefix('!');     }]);
+mainApplicationModule.config(['$locationProvider',
+     function($locationProvider) {
+       $locationProvider.hashPrefix('!');
+     }
+]);
 ```
 这样搜索引擎就会等待AJAX的请求，来获得网页内容。
 
@@ -343,7 +377,8 @@ $http.post('/someUrl', {msg:'hello word!'}).
     // or server returns response with an error status.
   });
 ```
-* $resource: 用来处理RESTful APIs，支持一系列的方法和参数。
+
+* $resource: 用来处理RESTful APIs，支持一系列的方法和参数。
 需要安装angular-resource.js，添加ngResource依赖
 
 ```
@@ -355,14 +390,22 @@ $http.post('/someUrl', {msg:'hello word!'}).
   'delete': {method:'DELETE'} };
 也可以加入自定动作
 ```
-* $location: 用来操作url* $q: 用来操作promises* $rootScope: 返回rootScope* $window: 返回浏览器window对象
+
+* $location: 用来操作url
+* $q: 用来操作promises
+* $rootScope: 返回rootScope
+* $window: 返回浏览器window对象
 
 ###创建AngluarJS服务
 一般使用两种方法来创建：
 
 ```
 //使用service提供数据的返回
-angular.module('example').factory('ExampleService', [     function() {       return true;     }]);
+angular.module('example').factory('ExampleService', [
+     function() {
+       return true;
+     }
+]);
 
 //通过service方法实例化一个单例对象，注意使用了prototype的方式
 angular.module('example').service('ExampleService', [
