@@ -1,21 +1,21 @@
 AngularJS简易入门
 ======
 
-##介绍AngularJS
+## 介绍AngularJS
 
 * AngularJS是JavaScript前端框架
 * 使用MVC架构创建单页应用
 
 > AngularJS是Google开发的纯客户端JavaScript技术的WEB框架,用于扩展、增强HTML功能,它专为构建强大的WEB应用而设计。
 
-##AngularJS的关键概念
-###AngularJS核心模块
+## AngularJS的关键概念
+### AngularJS核心模块
 包含一些对象和实体，用来完成AngularJS应用的基本操作
-###angular全局对象
+### angular全局对象
 ```angular```全局对象包含一些可以用来创建和启动应用的方法。```angular```对象包含了一个精简版的```jQuery```，叫做```jqLite```。可以使得Angular做一些简单的DOM操作。
-###AngularJS 模块
+### AngularJS 模块
 在AngularJS中，一切都被封装在模块之中。AngularJS需要至少一个模块来进行操作。
-####应用模块
+#### 应用模块
 AngularJS需要至少一个模块来启动，这个模块就是应用模块。
 使用```angular.module(name, [requires], [configFn])```来创建和获取模块。
 
@@ -24,17 +24,17 @@ AngularJS需要至少一个模块来启动，这个模块就是应用模块。
 * ```configFN```: 模块注册时调用的方法
 
 传入一个参数，获取对应模块。传入多个参数进行创建。（类似重载，跟是jQuery的setter,getter类似）
-####附加模块
+#### 附加模块
 同样是AngularJS team开发的，但是不包含在核心功能里的模块。
-####第三方模块
+#### 第三方模块
 由其他人开发的模块
 
-###双向数据绑定
+### 双向数据绑定
 双向数据绑定，使AngularJS应用总是保持model和view的一致。
 
 > 单向数据绑定与双向数据绑定```此处应展示图例```
 
-###依赖注入
+### 依赖注入
 
 示例：使用module的controller方法创建一个controller
 
