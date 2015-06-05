@@ -192,7 +192,6 @@ angular.element(document).ready(function() {
     angular.bootstrap(document, [mainApplicationModuleName]);
 });
 ```
-（此处适当说明一下代码）
 在index.ejs中引入application.js
 
 ```html
