@@ -123,7 +123,7 @@ angular. bootstrap(element, [modules], [config])
 ```shell
 $ npm install -g bower
 ```
-bower.json
+创建bower.json指定依赖
 
 ```javascript
 {
@@ -134,7 +134,7 @@ bower.json
 ```
 
 ###配置bower依赖管理
-.bowerrc
+创建.bowerrc文件指定依赖下载的路径
 
 ```javascript
 {
@@ -178,7 +178,7 @@ $ bower install
 
 * 水平结构
 * 垂直结构
-* 垂直结构改良
+* 垂直结构改良（示例采用此种）
 
 ##启动（引导）AngularJS应用
 我们采用手动启动的方式。
@@ -246,7 +246,7 @@ index.ejs中
 
 * scope是连接controller和view的一个对象
 * dom层级的关系，所以scope也是有层级的关系.本scope找不到的对象，会向上去查找。
-* 一般使用ng-controller来指定view的controller
+* 一般使用ng-controller来指定view的controller（也可以在路由配置中指定模controller）
 
 ```javascript
 example.client.controller.js --> public/example/controllers
